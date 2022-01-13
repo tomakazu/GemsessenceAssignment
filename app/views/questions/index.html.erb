@@ -1,0 +1,14 @@
+<div class="questions">
+    <%= link_to 'Begin', root_path, class: "start-test" %>
+    <% time = 0.seconds %>
+    <% @questions.each do |q| %>
+        <% time =  q.time.min.to_i + time.to_i %>
+    <% end %>
+    <span class="total-time"><%= "Total time : " + time.to_s %></span> 
+    <% @questions.each_with_index do |question,index| %>
+        <div class="question-time">
+            <%= link_to "Q." + (index+1).to_s + " " + question.qname, question, class: 'question' %>
+            <p class="time-index"> <%= question.time.to_formatted_s(:time) %> </p>
+        </div>
+    <% end %>
+</div>

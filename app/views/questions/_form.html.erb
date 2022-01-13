@@ -1,0 +1,42 @@
+<%= form_with(model: @question, local: true, class: "q-form") do |f| %>
+    <div class="input-field">
+        <%= f.label :qname %>
+        <br>
+        <%= f.text_field :qname, placeholder: "Type in the question" %>
+    </div>
+    <div class="input-field">
+        <%= f.label :option1, class: 'label' %>
+        <br>
+        <%= f.text_field :option1, placeholder: "Type in the option 1" %>
+    </div>
+    <div class="input-field">
+        <%= f.label :option2, class: 'label' %>
+        <br>
+        <%= f.text_field :option2, placeholder: "Type in the option 2" %>
+    </div>
+    <div class="input-field">
+        <%= f.label :option3, class: 'label' %>
+        <br>
+        <%= f.text_field :option3, placeholder: "Type in the option 3" %>
+    </div>
+    <div class="input-field">
+        <%= f.label :option4, class: 'label' %>
+        <br>
+        <%= f.text_field :option4, placeholder: "Type in the option 4" %>
+    </div>
+    <div class="input-field">
+        <%= f.label :correct_ans, class: 'label' %>
+        <br>
+        <%= f.text_field :correct_ans, placeholder: "Type in the correct answer" %>
+    </div>
+    <div class="input-field">
+        <%= f.label :time, class: 'label' %>
+        <br>
+        <%= f.time_field :time, placeholder: "Type in the time" %>
+    </div>
+    <div class="buttons">
+        <%= f.submit class: "start-test" %>
+        <%= link_to 'Cancel', root_path, class: "cancel-test" %>
+    </div>    
+     
+<% end %>
