@@ -1,10 +1,12 @@
 class QuestionsController < ApplicationController
-    
+
+    before_action :setQuestions, only: [:index]
+
     def index
-        @questions = Question.all.sample(10);
     end
 
     def show
+        @question = Question.find(params[:id])
     end
 
     def new
@@ -20,6 +22,13 @@ class QuestionsController < ApplicationController
             flash[:notice] = "Error occured in creating question!"
             render 'new'
         end
+    end
+
+    private
+    def setQuestions
+        @questions = Question.all.sample(10)
+        cookies[:questions] = @questions
+        cookies[:index] = 0
     end
   end
   

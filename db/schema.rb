@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_13_061204) do
+ActiveRecord::Schema.define(version: 2022_01_13_163048) do
 
   create_table "questions", force: :cascade do |t|
     t.string "qname"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2022_01_13_061204) do
     t.string "name"
     t.string "email"
     t.integer "contact"
-    t.integer "score"
+    t.integer "score", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

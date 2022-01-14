@@ -1,0 +1,33 @@
+<div class="question-time">
+    <p class="question"><%= @question.qname %></p>
+    <p class="time-index"> <%= @question.time.to_formatted_s(:time) %> </p>
+</div>
+<div class="options">
+    <% byebug %>
+    <div class="option">
+        <span><%= @question.option1 %></span>
+        <span class="rounded-circle" data-ans="A">
+            <span class="inner-circle hidden"></span>
+        </span>
+    </div>
+    <div class="option">
+        <span><%= @question.option2 %></span>
+        <span class="rounded-circle" data-ans="B">
+            <span class="inner-circle hidden"></span>
+        </span>
+    </div>
+    <div class="option">
+        <span><%= @question.option3 %></span>
+        <span class="rounded-circle" data-ans="C">
+            <span class="inner-circle hidden"></span>
+        </span>
+    </div>
+    <div class="option">
+        <span><%= @question.option4 %></span>
+        <span class="rounded-circle" data-ans="D">
+            <span class="inner-circle hidden"></span>
+        </span>
+    </div>
+</div>
+<% cookies[:index] = cookies[:index].to_i + 1  %>
+

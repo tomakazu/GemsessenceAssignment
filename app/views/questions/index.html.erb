@@ -1,5 +1,5 @@
 <div class="questions">
-    <%= link_to 'Begin', root_path, class: "start-test" %>
+    <%= link_to 'Begin', @questions.first, class: "start-test" %>
     <% time = 0.seconds %>
     <% @questions.each do |q| %>
         <% time =  q.time.min.to_i + time.to_i %>
