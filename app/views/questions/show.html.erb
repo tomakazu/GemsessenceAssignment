@@ -3,31 +3,30 @@
     <p class="time-index"> <%= @question.time.to_formatted_s(:time) %> </p>
 </div>
 <div class="options">
-    <% byebug %>
     <div class="option">
         <span><%= @question.option1 %></span>
-        <span class="rounded-circle" data-ans="A">
-            <span class="inner-circle hidden"></span>
+        <span class="rounded-circle" data-ans="A" data-ca="<%= @question.correct_ans == "A" %>">
+            <span class="inner-circle"></span>
         </span>
     </div>
     <div class="option">
         <span><%= @question.option2 %></span>
-        <span class="rounded-circle" data-ans="B">
-            <span class="inner-circle hidden"></span>
+        <span class="rounded-circle" data-ans="B" data-ca="<%= @question.correct_ans == "B" %>">
+            <span class="inner-circle"></span>
         </span>
     </div>
     <div class="option">
         <span><%= @question.option3 %></span>
-        <span class="rounded-circle" data-ans="C">
-            <span class="inner-circle hidden"></span>
+        <span class="rounded-circle" data-ans="C" data-ca="<%= @question.correct_ans == "C" %>">
+            <span class="inner-circle"></span>
         </span>
     </div>
     <div class="option">
         <span><%= @question.option4 %></span>
-        <span class="rounded-circle" data-ans="D">
-            <span class="inner-circle hidden"></span>
+        <span class="rounded-circle" data-ans="D" data-ca="<%= @question.correct_ans == "D" %>">
+            <span class="inner-circle"></span>
         </span>
     </div>
 </div>
 <% cookies[:index] = cookies[:index].to_i + 1  %>
-
+<%= link_to 'Next', root_path , class: 'next-q' %>

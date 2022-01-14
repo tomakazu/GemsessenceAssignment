@@ -8,6 +8,17 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+//= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
+//= require turbolinks
+//= require bootstrap-sprockets
+//= require_tree
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+$(document).on("click", ".rounded-circle", function() {
+    alert("Hello");
+});
